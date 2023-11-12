@@ -4,11 +4,12 @@
     <head>
         <meta name="generator" content="HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Tekin Bicer @ Data Science &amp; Learning Division, ANL</title>
         <link rel="shortcut icon" href="images/icon-ANL.ico" />
-        <link href="simple_files/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="simple_files/style.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
         <script type="text/javascript">
             var _gaq = _gaq || [];
@@ -20,9 +21,31 @@
              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
              })();
-        </script>
 
-</head>
+            // Tab refresh
+            function openCity(evt, cityName) {
+              // Declare all variables
+              var i, tabcontent, tablinks;
+
+              // Get all elements with class="tabcontent" and hide them
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+
+              // Get all elements with class="tablinks" and remove the class "active"
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+
+              // Show the current tab, and add an "active" class to the button that opened the tab
+              document.getElementById(cityName).style.display = "block";
+              evt.currentTarget.className += " active";
+            }
+
+        </script>
+    </head>
 <body>
     <div id="container">
         <div id="header">
@@ -63,7 +86,18 @@
 
         <!-- Start of main division (middle) -->
         <div id="main">
-            <h3>About me</h3>
+
+        <!-- Tab links -->
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'about')" id="defaultOpen"><i class="fa fa-fw fa-address-card"></i> About</button>
+          <button class="tablinks" onclick="openCity(event, 'experience')"><i class="fa fa-fw fa-gears"></i> Experience</button>
+          <button class="tablinks" onclick="openCity(event, 'awards')"><i class="fa fa-fw fa-award"></i> Awards</button>
+          <button class="tablinks" onclick="openCity(event, 'services')"><i class="fa fa-fw fa-bell-concierge"></i> Services</button>
+          <button class="tablinks" onclick="openCity(event, 'publications')"><i class="fa fa-fw fa-book"></i> Publications</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="about" class="tabcontent">
             <p class="pubpadding"/>
             I'm a computer scientist at Data Science and Learning (<a href="https://www.anl.gov/dsl">DSL</a>) division at <a href="https://www.anl.gov">Argonne National Laboratory</a>. I also hold joint appointments in X-ray Science division (<a href="https://www.aps.anl.gov/X-ray-Science-Division">XSD</a>) at Advanced Photon Source (<a href="https://www.aps.anl.gov/">APS</a>) and Consortium for Advanced Science and Engineering (<a href="https://researchinnovation.uchicago.edu/research-support/case/">CASE</a>) at the <a href="https://www.uchicago.edu">University of Chicago</a>. <br/>
 
@@ -92,8 +126,10 @@
             PhD., Computer Science &amp; Engineering, Ohio State University, 2010-2014<br/>
             MSc., Computer Science &amp; Engineering, Ohio State University, 2008-2010<br/>
             BEng., Computer Engineering, Izmir Institute of Technology, 2001-2006<br/>
+        </div>
 
-            <h3>Experience</h3>
+
+        <div id="experience" class="tabcontent">
             <p class="pubpadding"/>
             <ul>
                 <li>Argonne National Laboratory (<a href="https://www.anl.gov/dsl">ANL</a>), Computer Scientist at
@@ -115,8 +151,9 @@
                 <li>Ohio State University (<a href="http://www.cse.ohio-state.edu">OSU</a>), Graduate Research or Teaching 
                 Associate in CSE Department, Columbus, OH, USA (2010-2014)</li>
             </ul>
+        </div>
 
-            <h3>Honors &amp; Awards &amp; Recognitions</h3>
+        <div id="awards" class="tabcontent">
             <p class="pubpadding"/>
             <ul>
                 <li>Best Paper Runner-Up at High Performance Computing for Imaging (HPCI), Electronic Imaging Symposium (Jan. 2023)</li>
@@ -139,8 +176,9 @@
                 <li>Scholarship from Republic of Turkey, Ministry of National Education for graduate education (2007-2010)</li>
             -->
             </ul>
+        </div>
 
-            <h3>Professional Services</h3>
+        <div id="services" class="tabcontent">
             <p class="pubpadding"/>
             <ul>
                 <li>
@@ -195,9 +233,9 @@
                 Big Data Conference (2014) 
                 </li>
             </ul>
+        </div>
 
-
-            <h3>Publications</h3>
+        <div id="publications" class="tabcontent">
             <p class="pub">Journals</p>
             <p class="pubpadding"/>
             <ul>
@@ -544,8 +582,10 @@
 
                 </li>
             </ul>
-	    </br>
-	    <p style="font-size:85%;">* Supervised postdoc/interns</br>** Equal contribution with the first author</p>
+            </br>
+            <p style="font-size:85%;">* Supervised postdoc/interns</br>** Equal contribution with the first author</p>
+        </div>
+
         </div>
         <!-- End of main division -->
 
@@ -567,6 +607,11 @@
         <!-- end of footer -->
 
     </div>
+
+    <script>
+      // Default tab: About
+      document.getElementById("defaultOpen").click();
+    </script>
     <!-- end container -->
 
     <!-- Start of Counter Code 
