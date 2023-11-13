@@ -1,6 +1,6 @@
 body {
 	font-family:arial, verdana, helvetica, sans-serif;
-	font-size:12px;
+	font-size:14px;
 	cursor:default;
 	background-color:#FFFFFF
 }
@@ -179,7 +179,7 @@ a:hover {
   padding: 7px 15px;
   transition: 0.3s;
   color: #DB661C;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* Change background color of buttons on hover */
